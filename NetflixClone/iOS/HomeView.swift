@@ -7,11 +7,12 @@
 
 import Foundation
 import SwiftUI
-
+import Kingfisher
 
 struct HomeView: View {
     var vm = HomeVM()
     
+    let screen = UIScreen.main.bounds
     
     var body: some View {
         ZStack {
@@ -22,6 +23,12 @@ struct HomeView: View {
             // Main Vstack
             ScrollView(showsIndicators: false) {
                 LazyVStack {
+                    
+                    TopMoviePreview(movie: exampleMovie1)
+                        .frame(width: screen.width)
+                        .padding(.top, -100)
+                        
+                    
                     // id: \.self -> forEach 루프는 각각 루프 사이마다 구별가능한 아이덴티티가 필요함
                     // id를 부여함으로 각 each마다 값을줘서 사용가능
                     ForEach(vm.allCategories, id: \.self) { category in

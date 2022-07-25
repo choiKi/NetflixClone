@@ -32,8 +32,8 @@ class HomeVM: ObservableObject {
     func setupMovies() {
         // category -> "인기영화"인 것들은 GlobalHelpers의 exampleMovies
         movies["인기 영화"] = exampleMovies
-        movies["코미디"] = exampleMovies.shuffled()
         movies["신작"] = exampleMovies.shuffled()
+        movies["코미디"] = exampleMovies.shuffled()
         movies["다시 볼만한"] = exampleMovies.shuffled()
         movies["Sci - Fi"] = exampleMovies.shuffled()
     }

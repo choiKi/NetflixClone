@@ -23,10 +23,15 @@ struct HomeView: View {
             // Main Vstack
             ScrollView(showsIndicators: false) {
                 LazyVStack {
-                    
-                    TopMoviePreview(movie: exampleMovie1)
-                        .frame(width: screen.width)
-                        .padding(.top, -100)
+                        
+                    TopRowButton()
+                        
+                        
+                        TopMoviePreview(movie: exampleMovie1)
+                            .frame(width: screen.width)
+                            .padding(.top, -100)
+                            .zIndex(-1.0)
+                        
                         
                     
                     // id: \.self -> forEach 루프는 각각 루프 사이마다 구별가능한 아이덴티티가 필요함
@@ -61,5 +66,41 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
        HomeView()
+    }
+}
+
+struct TopRowButton: View {
+    var body: some View {
+        HStack {
+            Button(action: {
+                
+            }, label: {
+                Image("netflix_logo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 50)
+            })
+            .buttonStyle(PlainButtonStyle())
+            Spacer()
+            Button(action: {
+                
+            }, label: {
+                Text("티비 쇼")
+            })
+            Spacer()
+            Button(action: {
+                
+            }, label: {
+                Text("영 화")
+            })
+            Spacer()
+            Button(action: {
+                
+            }, label: {
+                Text("내 목록")
+            })
+        }
+        .padding(.leading, 10)
+        .padding(.trailing, 30)
     }
 }

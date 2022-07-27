@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import Kingfisher
 
 struct MovieDetail: View {
     
@@ -38,6 +38,21 @@ struct MovieDetail: View {
                             .cornerRadius(10)
                         
                         MovieInfoSubheadLine(movie: movie)
+                        
+                        Text(movie.promotionheadLine)
+                            .padding(.vertical, 7)
+                            .foregroundColor(.white)
+                            .font(.headline)
+                        
+                        PlayButton(text: "재 생", imageName: "play.fill", backgroundColor: Color.red, action: {
+                            
+                        })
+                        .padding(.vertical, 2)
+                        .frame(width: screen.width)
+                        
+                        EpisodeInfoView(movie: movie)
+                        
+                        CastView(movie: movie)
                     }
                 }
                 Spacer()
@@ -62,13 +77,62 @@ struct MovieInfoSubheadLine: View {
             Image(systemName: "hand.thumbsup.fill")
                 .foregroundColor(.white)
             
-            Text("개봉일")
+            Text(String(movie.year))
             
-            Text("평점")
+            RatingView(rating: movie.rating)
             
-            Text("시즌")
+            Text(movie.numberOfSeasonDisplay)
         }
         .foregroundColor(.gray)
         .padding(.vertical, 5)
+    }
+}
+
+struct RatingView: View {
+    var rating: String
+    
+    var body: some View {
+        ZStack {
+            Rectangle()
+                .foregroundColor(.gray)
+                
+            Text(rating)
+                .foregroundColor(.white)
+                .font(.system(size: 12))
+                .bold()
+        }
+        .frame(width: 50, height: 20)
+    }
+}
+
+struct CastView: View {
+    var movie: Movie
+    var body: some View {
+        VStack(spacing: 4) {
+            HStack {
+                Text("캐스트: \(movie.cast)")
+                Spacer()
+            }
+            HStack {
+                Text("감독: \(movie.creators)")
+                Spacer()
+            }
+        }
+        .padding(.vertical, 2)
+        .foregroundColor(.gray)
+        .font(.caption)
+    }
+}
+
+struct EpisodeInfoView: View {
+    var movie: Movie
+    var body: some View {
+        Group {
+            Text(movie.episodeInfoDisplay)
+                .font(.headline)
+                .font(.system(size: 20))
+                .padding(.vertical, 5)
+            Text(movie.episodeDescribtionDisplay)
+        }
     }
 }

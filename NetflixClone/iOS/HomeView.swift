@@ -26,13 +26,10 @@ struct HomeView: View {
                         
                     TopRowButton()
                         
-                        
                         TopMoviePreview(movie: exampleMovie1)
                             .frame(width: screen.width)
                             .padding(.top, -100)
                             .zIndex(-1.0)
-                        
-                        
                     
                     // id: \.self -> forEach 루프는 각각 루프 사이마다 구별가능한 아이덴티티가 필요함
                     // id를 부여함으로 각 each마다 값을줘서 사용가능

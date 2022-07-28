@@ -23,6 +23,7 @@
 		C47A9435288E648600A6DC18 /* TopMoviePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47A9434288E648600A6DC18 /* TopMoviePreview.swift */; };
 		C47A9438288E737900A6DC18 /* SmallVerticalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47A9437288E737900A6DC18 /* SmallVerticalButton.swift */; };
 		C47A943C288E7C1900A6DC18 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47A943B288E7C1900A6DC18 /* PlayButton.swift */; };
+		C4987A092892DC4D00AB1F6A /* CustomTabSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4987A082892DC4D00AB1F6A /* CustomTabSwitcher.swift */; };
 		C4B06418289142C9003C8D53 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B06417289142C9003C8D53 /* MovieDetail.swift */; };
 		C4B0641B2891755A003C8D53 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B0641A2891755A003C8D53 /* Episode.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		C47A9434288E648600A6DC18 /* TopMoviePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMoviePreview.swift; sourceTree = "<group>"; };
 		C47A9437288E737900A6DC18 /* SmallVerticalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallVerticalButton.swift; sourceTree = "<group>"; };
 		C47A943B288E7C1900A6DC18 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
+		C4987A082892DC4D00AB1F6A /* CustomTabSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabSwitcher.swift; sourceTree = "<group>"; };
 		C4B06417289142C9003C8D53 /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
 		C4B0641A2891755A003C8D53 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +159,7 @@
 				C4B0641C28917565003C8D53 /* HomeView */,
 				C4B064192891754D003C8D53 /* Model */,
 				C4B06417289142C9003C8D53 /* MovieDetail.swift */,
+				C4987A082892DC4D00AB1F6A /* CustomTabSwitcher.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				C47A9435288E648600A6DC18 /* TopMoviePreview.swift in Sources */,
 				C40D76C2288D4F7900691899 /* Movie.swift in Sources */,
 				C405F65A288D4466008D696C /* NetflixCloneApp.swift in Sources */,
+				C4987A092892DC4D00AB1F6A /* CustomTabSwitcher.swift in Sources */,
 				C47A9438288E737900A6DC18 /* SmallVerticalButton.swift in Sources */,
 				C47A943C288E7C1900A6DC18 /* PlayButton.swift in Sources */,
 				C4B06418289142C9003C8D53 /* MovieDetail.swift in Sources */,

@@ -53,6 +53,12 @@ struct MovieDetail: View {
                         EpisodeInfoView(movie: movie)
                         
                         CastView(movie: movie)
+                        
+                        ThreeButtonView()
+                        
+                        CustomTabSwitcher(tabs: [.episodes, .trailers, .more])
+                        
+                        
                     }
                 }
                 Spacer()
@@ -68,6 +74,8 @@ struct MovieDetail_Previews: PreviewProvider {
         MovieDetail(movie: exampleMovie1)
     }
 }
+
+
 
 struct MovieInfoSubheadLine: View {
     
@@ -134,5 +142,24 @@ struct EpisodeInfoView: View {
                 .padding(.vertical, 5)
             Text(movie.episodeDescribtionDisplay)
         }
+    }
+}
+
+struct ThreeButtonView: View {
+    var body: some View {
+        HStack(spacing: 60) {
+            SmallVerticalButton(text: "내 목록", isOnImage: "checkmark", isOffImage: "plus", isOn: true) {
+                //
+            }
+            SmallVerticalButton(text: "좋아요", isOnImage: "hand.thumbsup.fill", isOffImage: "hand.thumbsup", isOn: true) {
+                //
+            }
+            SmallVerticalButton(text: "공유 하기", isOnImage: "square.and.arrow.up", isOffImage: "square.and.arrow.up", isOn: true) {
+                //
+            }
+            
+            Spacer()
+        }
+        .padding(.leading, 20)
     }
 }

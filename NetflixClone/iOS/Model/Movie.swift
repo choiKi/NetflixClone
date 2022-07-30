@@ -28,6 +28,7 @@ struct Movie: Identifiable {
     var cast: String
     var creators: String
     
+    
     var episode: [Episode]?
     
     var numberOfSeasonDisplay: String {

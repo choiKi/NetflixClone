@@ -158,10 +158,19 @@
 				C4B0641D28917577003C8D53 /* Helper */,
 				C4B0641C28917565003C8D53 /* HomeView */,
 				C4B064192891754D003C8D53 /* Model */,
+				C4987A0A28950CA900AB1F6A /* MovieDetail */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		C4987A0A28950CA900AB1F6A /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
 				C4B06417289142C9003C8D53 /* MovieDetail.swift */,
 				C4987A082892DC4D00AB1F6A /* CustomTabSwitcher.swift */,
 			);
-			path = iOS;
+			name = MovieDetail;
+			path = "ㅡㅐ퍋ㅇㄷㅅ먀ㅣ";
 			sourceTree = "<group>";
 		};
 		C4B064192891754D003C8D53 /* Model */ = {

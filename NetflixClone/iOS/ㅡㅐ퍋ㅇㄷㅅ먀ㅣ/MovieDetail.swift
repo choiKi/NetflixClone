@@ -33,10 +33,15 @@ struct MovieDetail: View {
                 
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack {
-                        StandardHomeMovie(movie: movie)
-                            .frame(width: screen.width / 2.5)
-                            .cornerRadius(10)
-                        
+                        ZStack {
+                            StandardHomeMovie(movie: movie)
+                                .frame(width: screen.width / 2.5, height: screen.height / 3)
+                                .cornerRadius(10)
+                            StandardHomeMovie(movie: movie)
+                                .frame(width: screen.width, height: screen.height / 3)
+                                .opacity(0.2)
+                        }
+        
                         MovieInfoSubheadLine(movie: movie)
                         
                         Text(movie.promotionheadLine)
@@ -57,6 +62,7 @@ struct MovieDetail: View {
                         ThreeButtonView()
                         
                         CustomTabSwitcher(tabs: [.episodes, .trailers, .more])
+                            .padding(.vertical, 10)
                         
                         
                     }

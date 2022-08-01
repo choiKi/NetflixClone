@@ -13,7 +13,6 @@ struct CustomTabSwitcher: View {
     @State private var currentTab: CustomTab = .episodes
     
     var tabs: [CustomTab]
-    //var movie : Movie
     
     func widthForTab(_ tab: CustomTab) -> CGFloat {
         let string = tab.rawValue
@@ -33,7 +32,7 @@ struct CustomTabSwitcher: View {
                                 .frame(width: widthForTab(tab) , height: 6)
                                 .foregroundColor(tab == currentTab ? Color.red : Color.clear)
                                 .transition(.slide)
-                                .animation(.linear)
+                                // .animation(.linear)
                             // btn
                             Button(action: {
                                 //state
@@ -44,19 +43,23 @@ struct CustomTabSwitcher: View {
                                     
                             })
                             .buttonStyle(PlainButtonStyle())
+                            .frame(width: widthForTab(tab), height: 30)
                         }
                         
                     }
                 }
             }
             switch currentTab {
+                
             case .episodes:
-                Text("에피소드")
+                SmallVerticalButton(text: "test", isOnImage: "", isOffImage: "", isOn: true) {
+                    //
+                }
             case .trailers:
-                Text("트레일러")
+                TrailerList(trailers: exampleTrailers)
             case .more:
-                Text("m")
-               // MoreLikeThis(movies: movie.moreLikeThisMovies)
+                Text("더 보기")
+                
             }
             
         }
@@ -82,4 +85,7 @@ struct CustomTabSwitcher_Previews: PreviewProvider {
         
     }
 }
+
+
+
 

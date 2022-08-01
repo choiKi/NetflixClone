@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Kingfisher
 
 struct Movie: Identifiable {
     
@@ -30,6 +31,8 @@ struct Movie: Identifiable {
     
     
     var episode: [Episode]?
+    
+    var trailers: [Trailer]
     
     var numberOfSeasonDisplay: String {
         guard let numberOfSeason = numberOfSeason else {

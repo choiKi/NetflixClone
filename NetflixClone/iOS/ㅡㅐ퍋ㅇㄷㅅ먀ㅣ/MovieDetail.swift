@@ -16,6 +16,8 @@ struct MovieDetail: View {
     @State private var showSeasonPicker = false
     @State private var selectedSeason = 1
     
+    @Binding var movieDetailToShow: Movie?
+    
     var body: some View {
         
         ZStack {
@@ -26,6 +28,7 @@ struct MovieDetail: View {
                     Spacer()
                     Button(action: {
                         // close View
+                        movieDetailToShow = nil
                     }, label: {
                         Image(systemName: "xmark.circle")
                             .font(.system(size: 28))
@@ -64,8 +67,7 @@ struct MovieDetail: View {
                         
                         ThreeButtonView()
                         
-                        CustomTabSwitcher(tabs: [.episodes, .trailers, .more])
-                            .padding(.vertical, 10)
+                        CustomTabSwitcher(tabs: [.episodes, .trailers, .more], movie: exampleMovie1, showSeasonPicker: $showSeasonPicker, selectedSeason: $selectedSeason)
                         
                         
                     }
@@ -73,6 +75,39 @@ struct MovieDetail: View {
                 Spacer()
             }
             .foregroundColor(.white)
+            
+            if showSeasonPicker == true {
+                Group {
+                    Color.black.opacity(0.9)
+                    VStack {
+                        Spacer()
+                        
+                        ForEach(0..<(movie.numberOfSeason ?? 0)) { season in
+                            Button {
+                                self.selectedSeason = season + 1
+                                self.showSeasonPicker = false
+                            } label: {
+                                Text("시즌 \(season + 1)")
+                                    .bold()
+                                    .padding(.bottom, 10)
+                                    .foregroundColor(selectedSeason == season + 1 ? .white : .gray)
+                                    .font(selectedSeason == season + 1 ? .title : .title2)
+                            }
+                        }
+                        Spacer()
+                        Button {
+                            showSeasonPicker = false
+                        } label: {
+                            Image(systemName: "x.circle.fill")
+                                .foregroundColor(.white)
+                                .font(.system(size: 30))
+                        }
+                        .padding(.bottom, 30)
+                    }
+                }
+                .edgesIgnoringSafeArea(.all)
+             
+            }
         }
     }
 }
@@ -80,7 +115,7 @@ struct MovieDetail: View {
 
 struct MovieDetail_Previews: PreviewProvider {
     static var previews: some View {
-        MovieDetail(movie: exampleMovie1)
+        MovieDetail(movie: exampleMovie1, movieDetailToShow: .constant(nil))
     }
 }
 

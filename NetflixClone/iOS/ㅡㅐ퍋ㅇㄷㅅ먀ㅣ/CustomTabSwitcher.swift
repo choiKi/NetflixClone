@@ -13,6 +13,10 @@ struct CustomTabSwitcher: View {
     @State private var currentTab: CustomTab = .episodes
     
     var tabs: [CustomTab]
+    var movie: Movie
+    
+    @Binding var showSeasonPicker: Bool
+    @Binding var selectedSeason: Int
     
     func widthForTab(_ tab: CustomTab) -> CGFloat {
         let string = tab.rawValue
@@ -52,9 +56,7 @@ struct CustomTabSwitcher: View {
             switch currentTab {
                 
             case .episodes:
-                SmallVerticalButton(text: "test", isOnImage: "", isOffImage: "", isOn: true) {
-                    //
-                }
+                EpisodeView(episode: movie.episode ?? [], showSeasonPicker: $showSeasonPicker, selectedSeason: $selectedSeason)
             case .trailers:
                 TrailerList(trailers: exampleTrailers)
             case .more:
@@ -80,7 +82,7 @@ struct CustomTabSwitcher_Previews: PreviewProvider {
         ZStack {
             Color.black
                 .edgesIgnoringSafeArea(.all)
-            CustomTabSwitcher(tabs: [.episodes, .trailers, .more])
+            CustomTabSwitcher(tabs: [.episodes, .trailers, .more], movie: exampleMovie1, showSeasonPicker: .constant(false), selectedSeason: .constant(1))
         }
         
     }

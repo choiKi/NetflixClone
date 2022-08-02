@@ -30,7 +30,6 @@ struct VideoPreviewImage: View {
             .sheet(isPresented: $showingVideoPlayer) {
                 SwiftUIVideoView(url: videoURL)
             }
-
         }
     }
 }

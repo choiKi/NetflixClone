@@ -15,7 +15,11 @@ struct HomeView: View {
     let screen = UIScreen.main.bounds
     
     @State private var movieDetailToShow: Movie? = nil
+    @State private var topRowSelection: HomeTopRow = .home
+    @State private var selectedGenre: HomeGenre = .allGenre
     
+    @State private var showGenreSelection = false
+    @State private var showTopRowSelection = false
     
     var body: some View {
         ZStack {
@@ -27,45 +31,21 @@ struct HomeView: View {
             ScrollView(showsIndicators: false) {
                 LazyVStack {
                         
-                    TopRowButton()
+                    TopRowButton(topRowSelection: $topRowSelection, selectedGenre: $selectedGenre, showGenreSelection: $showGenreSelection, showTopRowSelection: $showTopRowSelection)
                         
                         TopMoviePreview(movie: exampleMovie1)
                             .frame(width: screen.width)
                             .padding(.top, -100)
                             .zIndex(-1.0)
                     
-                    // id: \.self -> forEach 루프는 각각 루프 사이마다 구별가능한 아이덴티티가 필요함
-                    // id를 부여함으로 각 each마다 값을줘서 사용가능
-                    ForEach(vm.allCategories, id: \.self) { category in
-                        VStack {
-                            HStack {
-                                Text(category)
-                                    .font(.title3)
-                                    .bold()
-                                Spacer()
-                            }
-                            // 옆으로 넘기는 ScrollView , Xcode12부턴 content 없애도 무방함
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                LazyHStack {
-                                    ForEach(vm.getMovie(forCat: category)) { movie in
-                                        StandardHomeMovie(movie: movie)
-                                            .frame(width:100 , height:200)
-                                            .padding(.horizontal, 20)
-                                            .onTapGesture {
-                                                movieDetailToShow = movie
-                                            }
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    HomeStack(vm: vm,topRowSelection: topRowSelection ,movieDetailToShow: $movieDetailToShow)
                 }
             }
             
             if movieDetailToShow != nil {
                 MovieDetail(movie: movieDetailToShow!, movieDetailToShow: $movieDetailToShow)
                     .animation(.easeInOut)
-                    .transition(.slide)
+                    .transition(.scale)
             }
         }
         .foregroundColor(.white)
@@ -79,37 +59,106 @@ struct HomeView_Previews: PreviewProvider {
 }
 
 struct TopRowButton: View {
+    
+    @Binding var topRowSelection: HomeTopRow
+    @Binding var selectedGenre: HomeGenre
+    
+    @Binding var showGenreSelection: Bool
+    @Binding var showTopRowSelection: Bool
+    
+    
     var body: some View {
-        HStack {
-            Button(action: {
-                
-            }, label: {
-                Image("netflix_logo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 50)
-            })
-            .buttonStyle(PlainButtonStyle())
-            Spacer()
-            Button(action: {
-                
-            }, label: {
-                Text("티비 쇼")
-            })
-            Spacer()
-            Button(action: {
-                
-            }, label: {
-                Text("영 화")
-            })
-            Spacer()
-            Button(action: {
-                
-            }, label: {
-                Text("내 목록")
-            })
+        switch topRowSelection {
+        case .home:
+            HStack {
+                Button(action: {
+                    topRowSelection = .home
+                }, label: {
+                    Image("netflix_logo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50)
+                })
+                .buttonStyle(PlainButtonStyle())
+                Spacer()
+                Button(action: {
+                    topRowSelection = .tvShow
+                }, label: {
+                    Text("티비 쇼")
+                })
+                Spacer()
+                Button(action: {
+                    topRowSelection = .movies
+                }, label: {
+                    Text("영 화")
+                })
+                Spacer()
+                Button(action: {
+                    topRowSelection = .myList
+                }, label: {
+                    Text("내 목록")
+                })
+                Spacer()
+            }
+            .padding(.leading, 10)
+            .padding(.trailing, 30)
+            
+        // topRowbutton 에서 넷플릭스 로고말고 다른거를 클릭히였을 때
+        case .myList, .tvShow, .movies:
+            HStack {
+                Button(action: {
+                    topRowSelection = .home
+                }, label: {
+                    Image("netflix_logo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50)
+                })
+                .buttonStyle(PlainButtonStyle())
+                Spacer()
+                HStack(spacing: 30) {
+                    Button(action: {
+                        showTopRowSelection = true
+                    }, label: {
+                        Text(topRowSelection.rawValue)
+                        Image(systemName: "triangle.fill")
+                            .font(.system(size: 10))
+                            .rotationEffect(.degrees(180), anchor: .center)
+                        
+                    })
+                    
+                    Button(action: {
+                        showGenreSelection = true
+                    }, label: {
+                        Text(selectedGenre.rawValue)
+                        Image(systemName: "triangle.fill")
+                            .font(.system(size: 10))
+                            .rotationEffect(.degrees(180), anchor: .center)
+                        
+                    })
+                    Spacer()
+                }
+            }
+            .padding(.leading, 10)
+            .padding(.trailing, 30)
+        default :
+            Text("error")
         }
-        .padding(.leading, 10)
-        .padding(.trailing, 30)
     }
 }
+
+enum HomeTopRow: String, CaseIterable {
+    case home = "홈"
+    case tvShow = "티비 쇼"
+    case movies = "영화"
+    case myList = "내 목록"
+}
+
+enum HomeGenre: String, CaseIterable {
+    case allGenre = "모든 장르"
+    case action = "액션"
+    case comedy = "코미디"
+    case horror = "공포"
+    case thriller = "스릴러"
+}
+

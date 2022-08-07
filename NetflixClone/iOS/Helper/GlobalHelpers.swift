@@ -34,7 +34,8 @@ let episode3 = Episode(name: "평화", season: 1, episodeNumber: 3, thumbnailIma
 let episode4 = Episode(name: "귀신", season: 2, episodeNumber: 1, thumbnailImageURLString: "https://picsum.photos/300/15", description: "조디의 일의 관심을 가지는 귀신이라는 남자 어딘가 불안하다. 하지만 거절할수없는 조디, 동업을 하게되는데 이 남자 위험한데 함께 하는게 맞는걸끼? 귀신이라는 별명이 이것때문이었어?", length: 52, videoURL: exampleVideoURL)
 let episode5 = Episode(name: "뜻밖의 손님", season: 2, episodeNumber: 2, thumbnailImageURLString: "https://picsum.photos/300/16", description: "귀신을 만나고 승승장구 하는 조디, 그 덕에 자신을 떠났던 사랑했던 이들이 돌아오고 그 사이에서 갈등하는 조디 이 사람들에게 내 비밀을 말해도 되는걸까? 남은 기간 3개월 조디의 끝은?", length: 48, videoURL: exampleVideoURL)
 let episode6 = Episode(name: "D-150", season: 2, episodeNumber: 3, thumbnailImageURLString: "https://picsum.photos/300/17", description: "계속 조여오는 숫자에 미칠것같은 조디, 약을 투여해보지만 나아질 기세는 없고, 이 사실을 모르는 주변사람들 조디를 압박하기 시작하고 이들은 점점 엇갈리기 시작하는데", length: 51, videoURL: exampleVideoURL)
- var allExampleEpisodes = [episode1,episode2,episode3,episode4,episode5,episode6]
+var allExampleEpisodes = [episode1,episode2,episode3,episode4,episode5,episode6]
+
 
 // 홈 뷰 영화 예시
 
@@ -73,13 +74,83 @@ let exampleMovie6 = Movie(id: UUID().uuidString, name: "After Life", thumbnailUR
                           episode: allExampleEpisodes,
                           trailers: exampleTrailers)
 
-let exampleMovie7 = Movie(id: UUID().uuidString, name: "Before Life", thumbnailURL:URL(string: "https://picsum.photos/200/304/")!, categories: ["Dystopian","Exciting","Suspenseful","Sci-Fi TV"], year: 2020, rating: "TV-MA", numberOfSeason: 2, defaultEpisodeInfo: exampleEpisodeInfo1, cast: "최기훈, 박민정",
+let exampleMovie7 = Movie(id: UUID().uuidString, name: "Before Life", thumbnailURL:URL(string: "https://picsum.photos/200/306/")!, categories: ["Dystopian","Exciting","Suspenseful","Sci-Fi TV"], year: 2020, rating: "TV-MA", numberOfSeason: 2, defaultEpisodeInfo: exampleEpisodeInfo1, cast: "최기훈, 박민정",
                           creators: "최기훈",
                           episode: allExampleEpisodes,
                           trailers: exampleTrailers)
 
-var exampleMovies: [Movie]  { return [exampleMovie1, exampleMovie2, exampleMovie3, exampleMovie4, exampleMovie5, exampleMovie6].shuffled()
+var exampleMovies: [Movie]  { return [exampleMovie1, exampleMovie2, exampleMovie3, exampleMovie4, exampleMovie5, exampleMovie6,exampleTVShow1,exampleTVShow2,exampleTVShow3,exampleTVShow4,exampleTVShow5,exampleTVShow6].shuffled()
 }
+
+// tvShow example
+
+let exampleTVShow1 = Movie(id: UUID().uuidString,
+                           name: "Before Life",
+                           thumbnailURL:URL(string: "https://picsum.photos/200/314/")!,
+                           categories: ["Dystopian","Exciting","Suspenseful","Sci-Fi TV"],
+                           year: 2020,
+                           rating: "TV-MA",
+                           numberOfSeason: 2,
+                           defaultEpisodeInfo: exampleEpisodeInfo1,
+                           cast: "최기훈, 박민정",
+                           creators: "최기훈",
+                           trailers: exampleTrailers)
+let exampleTVShow2 = Movie(id: UUID().uuidString,
+                           name: "Before Life",
+                           thumbnailURL:URL(string: "https://picsum.photos/200/308/")!,
+                           categories: ["Dystopian","Exciting","Suspenseful","Sci-Fi TV"],
+                           year: 2020,
+                           rating: "TV-MA",
+                           numberOfSeason: 2,
+                           defaultEpisodeInfo: exampleEpisodeInfo1,
+                           cast: "최기훈, 박민정",
+                           creators: "최기훈",
+                           trailers: exampleTrailers)
+let exampleTVShow3 = Movie(id: UUID().uuidString,
+                           name: "Before Life",
+                           thumbnailURL:URL(string: "https://picsum.photos/200/309/")!,
+                           categories: ["Dystopian","Exciting","Suspenseful","Sci-Fi TV"],
+                           year: 2020,
+                           rating: "TV-MA",
+                           numberOfSeason: 2,
+                           defaultEpisodeInfo: exampleEpisodeInfo1,
+                           cast: "최기훈, 박민정",
+                           creators: "최기훈",
+                           trailers: exampleTrailers)
+let exampleTVShow4 = Movie(id: UUID().uuidString,
+                           name: "Before Life",
+                           thumbnailURL:URL(string: "https://picsum.photos/200/310/")!,
+                           categories: ["Dystopian","Exciting","Suspenseful","Sci-Fi TV"],
+                           year: 2020,
+                           rating: "TV-MA",
+                           numberOfSeason: 2,
+                           defaultEpisodeInfo: exampleEpisodeInfo1,
+                           cast: "최기훈, 박민정",
+                           creators: "최기훈",
+                           trailers: exampleTrailers)
+let exampleTVShow5 = Movie(id: UUID().uuidString,
+                           name: "Before Life",
+                           thumbnailURL:URL(string: "https://picsum.photos/200/311/")!,
+                           categories: ["Dystopian","Exciting","Suspenseful","Sci-Fi TV"],
+                           year: 2020,
+                           rating: "TV-MA",
+                           numberOfSeason: 2,
+                           defaultEpisodeInfo: exampleEpisodeInfo1,
+                           cast: "최기훈, 박민정",
+                           creators: "최기훈",
+                           trailers: exampleTrailers)
+let exampleTVShow6 = Movie(id: UUID().uuidString,
+                           name: "Before Life",
+                           thumbnailURL:URL(string: "https://picsum.photos/200/312/")!,
+                           categories: ["Dystopian","Exciting","Suspenseful","Sci-Fi TV"],
+                           year: 2020,
+                           rating: "TV-MA",
+                           numberOfSeason: 2,
+                           defaultEpisodeInfo: exampleEpisodeInfo1,
+                           cast: "최기훈, 박민정",
+                           creators: "최기훈",
+                           trailers: exampleTrailers)
+
 
 // 디테일뷰 더미 텍스트
 

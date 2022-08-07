@@ -31,6 +31,7 @@
 		C4B677892897D68500105BAE /* SwiftUIVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B677882897D68500105BAE /* SwiftUIVideoView.swift */; };
 		C4B6778C2897D80700105BAE /* VideoPreviewImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B6778B2897D80700105BAE /* VideoPreviewImage.swift */; };
 		C4B6778E2897DA1000105BAE /* TrailerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B6778D2897DA1000105BAE /* TrailerList.swift */; };
+		C4EDA40D289FAD2C00E2FF67 /* HomeStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EDA40C289FAD2C00E2FF67 /* HomeStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		C4B677882897D68500105BAE /* SwiftUIVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIVideoView.swift; sourceTree = "<group>"; };
 		C4B6778B2897D80700105BAE /* VideoPreviewImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPreviewImage.swift; sourceTree = "<group>"; };
 		C4B6778D2897DA1000105BAE /* TrailerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerList.swift; sourceTree = "<group>"; };
+		C4EDA40C289FAD2C00E2FF67 /* HomeStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 			children = (
 				C405F683288D4613008D696C /* HomeView.swift */,
 				C40D76C7288D52DF00691899 /* HomeVM.swift */,
+				C4EDA40C289FAD2C00E2FF67 /* HomeStack.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				C4987A092892DC4D00AB1F6A /* CustomTabSwitcher.swift in Sources */,
 				C47A9438288E737900A6DC18 /* SmallVerticalButton.swift in Sources */,
 				C47A943C288E7C1900A6DC18 /* PlayButton.swift in Sources */,
+				C4EDA40D289FAD2C00E2FF67 /* HomeStack.swift in Sources */,
 				C4B6778C2897D80700105BAE /* VideoPreviewImage.swift in Sources */,
 				C4B06418289142C9003C8D53 /* MovieDetail.swift in Sources */,
 			);

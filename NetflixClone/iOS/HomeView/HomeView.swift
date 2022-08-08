@@ -47,8 +47,79 @@ struct HomeView: View {
                     .animation(.easeInOut)
                     .transition(.scale)
             }
+            
+            if showTopRowSelection  {
+                Color.black.opacity(0.85)
+                VStack (spacing: 40) {
+                    Spacer()
+                    ForEach(HomeTopRow.allCases, id: \.self) { row in
+                        Button {
+                            topRowSelection = row
+                            showTopRowSelection = false
+                        } label: {
+                            if row == topRowSelection {
+                                Text("\(row.rawValue)")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 30))
+                            }else {
+                                Text("\(row.rawValue)")
+                                    .foregroundColor(.gray)
+                                    .font(.system(size: 25))
+                            }
+                        }
+
+                    }
+                    Spacer()
+                    Spacer()
+                    Button {
+                        showTopRowSelection = false
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .foregroundColor(.white)
+                            .font(.system(size: 30))
+                    }
+                    Spacer()
+                   
+                }
+                .edgesIgnoringSafeArea(.all)
+            }
+            
+            if showGenreSelection {
+                Color.black.opacity(0.85)
+                VStack (spacing: 20) {
+                    ForEach(HomeGenre.allCases, id: \.self) { row in
+                        Spacer()
+                        Button {
+                            selectedGenre = row
+                            showGenreSelection = false
+                        } label: {
+                            if row == selectedGenre {
+                                Text("\(row.rawValue)")
+                                    .font(.system(size: 30))
+                                    .foregroundColor(.white)
+                            } else {
+                                Text("\(row.rawValue)")
+                                    .font(.system(size: 25))
+                                    .foregroundColor(.gray)
+                            }
+                        }
+                    }
+                    Spacer()
+                    Spacer()
+                    Button {
+                        showGenreSelection = false
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .foregroundColor(.white)
+                            .font(.system(size: 30))
+                    }
+                Spacer()
+                }
+            }
         }
         .foregroundColor(.white)
+        
+        
     }
 }
 

@@ -9,7 +9,9 @@ import SwiftUI
 
 struct SearchBar: View {
     
-    @State private var text: String = ""
+    @Binding  var text: String
+    @State private var isEditing: Bool = true
+    @Binding  var isLoading: Bool
     
     var body: some View {
         ZStack(alignment: .leading) {
@@ -27,20 +29,45 @@ struct SearchBar: View {
                 TextField("  Search", text: $text)
                     .background(Color.graySearchBackground)
                     .foregroundColor(.white)
-                    
-                Button {
-                    text = ""
-                } label: {
-                    Image(systemName: "xmark.circle.fill")
-                        .foregroundColor(.graySearchText)
+                    .onTapGesture {
+                        isEditing = true
+                    }
+                    // text가 입력중일때
+                if !text.isEmpty {
+                    if isLoading {
+                        Button {
+                            text = ""
+                        } label: {
+                            ActivityIndicator(style: .medium,
+                                              animate: .constant(true))
+                            .configure {
+                                $0.color = .white
+                            }
+                        }
+                        .padding(. trailing, 16)
                         .frame(width: 35, height: 35)
+
+                    } else {
+                        Button {
+                            text = ""
+                            isEditing = false
+                            hideKeyboard()
+                        } label: {
+                            Image(systemName: "xmark.circle.fill")
+                                .foregroundColor(.graySearchText)
+                                .frame(width: 35, height: 35)
+                        }
+                    }
                 }
-    
-                Button {
-                    text = ""
-                } label: {
-                    Text("취소")
-                        .foregroundColor(.graySearchText)
+                
+                if isEditing {
+                    Button {
+                        text = ""
+                    } label: {
+                        Text("취소")
+                            .foregroundColor(.white)
+                    }
+                    
                 }
             }
         }
@@ -53,7 +80,8 @@ struct SearchBar_Previews: PreviewProvider {
         ZStack {
             Color.black
                 .edgesIgnoringSafeArea(.all)
-            SearchBar()
+            SearchBar(text: .constant(""), isLoading: .constant(false))
+                .padding()
         }
        
     }

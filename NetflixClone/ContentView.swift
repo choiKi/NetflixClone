@@ -23,7 +23,7 @@ struct ContentView: View {
                     Image(systemName: "house")
                     Text("홈")
                 }.tag(0)
-            Text("검색")
+            SearchView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("검색")

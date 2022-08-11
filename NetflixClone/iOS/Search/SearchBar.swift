@@ -32,6 +32,7 @@ struct SearchBar: View {
                     .onTapGesture {
                         isEditing = true
                     }
+                    .animation(.default)
                     // text가 입력중일때
                 if !text.isEmpty {
                     if isLoading {

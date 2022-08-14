@@ -39,6 +39,9 @@ struct Movie: Identifiable {
     
     var trailers: [Trailer]
     
+    var previewImageName: String
+    var previewVideoURL: URL?
+    
     var numberOfSeasonDisplay: String {
         guard let numberOfSeason = numberOfSeason else {
             return "-"

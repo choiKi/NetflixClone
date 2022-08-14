@@ -195,7 +195,6 @@
 		C405F685288D461D008D696C /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				C4FDB08128A9072000E9FEE4 /* Download */,
 				C4B0641D28917577003C8D53 /* Helper */,
 				C4B0641C28917565003C8D53 /* HomeView */,
 				C4B064192891754D003C8D53 /* Model */,
@@ -203,6 +202,7 @@
 				C4B6778A2897D7A500105BAE /* VideoPlayer */,
 				C45DFB7A28A1126100FE4F76 /* Search */,
 				C48B6ADA28A5491B00F6B67A /* ComingSoon */,
+				C4FDB08128A9072000E9FEE4 /* Download */,
 			);
 			path = iOS;
 			sourceTree = "<group>";

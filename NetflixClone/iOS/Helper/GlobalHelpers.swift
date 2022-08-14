@@ -50,34 +50,39 @@ let exampleMovie1 = Movie(id: UUID().uuidString,
                           cast: "최기훈, 박민정",
                           creators: "최기훈",
                           episode: allExampleEpisodes,
-                          trailers: exampleTrailers
+                          trailers: exampleTrailers, previewImageName: "ozarkPreview"
                           )
 let exampleMovie2 = Movie(id: UUID().uuidString, name: "Travelers", thumbnailURL:URL(string: "https://picsum.photos/200/301/")!, categories: ["Dystopian","Exciting","Suspenseful","Sci-Fi TV"], year: 2020, rating: "TV-MA", numberOfSeason: 2, defaultEpisodeInfo: exampleEpisodeInfo1,cast: "최기훈, 박민정",
                           creators: "최기훈",
                           episode: allExampleEpisodes,
-                          trailers: exampleTrailers)
+                          trailers: exampleTrailers, previewImageName: "arrestedDevPreview")
 let exampleMovie3 = Movie(id: UUID().uuidString, name: "Community", thumbnailURL:URL(string: "https://picsum.photos/200/302/")!, categories: ["Dystopian","Exciting","Suspenseful","Sci-Fi TV"], year: 2020, rating: "TV-MA", numberOfSeason: 1, defaultEpisodeInfo: exampleEpisodeInfo1,cast: "최기훈, 박민정",
                           creators: "최기훈",
                           episode: allExampleEpisodes,
-                          trailers: exampleTrailers)
+                          trailers: exampleTrailers,
+                          previewImageName: "darkPreview")
 let exampleMovie4 = Movie(id: UUID().uuidString, name: "Alone", thumbnailURL:URL(string: "https://picsum.photos/200/303/")!, categories: ["Dystopian","Exciting","Suspenseful","Sci-Fi TV"], year: 2020, rating: "TV-MA", numberOfSeason: 4, defaultEpisodeInfo: exampleEpisodeInfo1,cast: "최기훈, 박민정",
                           creators: "최기훈",
                           episode: allExampleEpisodes,
-                          trailers: exampleTrailers)
+                          trailers: exampleTrailers,
+                          previewImageName: "travelersPreview")
 let exampleMovie5 = Movie(id: UUID().uuidString, name: "Hannibal", thumbnailURL:URL(string: "https://picsum.photos/200/304/")!, categories: ["Dystopian","Exciting","Suspenseful","Sci-Fi TV"], year: 2020, rating: "TV-MA", defaultEpisodeInfo: exampleEpisodeInfo1,cast: "최기훈, 박민정",
                           creators: "최기훈",
                           episode: allExampleEpisodes,
-                          trailers: exampleTrailers)
+                          trailers: exampleTrailers,
+                          previewImageName: "dirtyJohnPreview")
 
 let exampleMovie6 = Movie(id: UUID().uuidString, name: "After Life", thumbnailURL:URL(string: "https://picsum.photos/200/305/")!, categories: ["Dystopian","Exciting","Suspenseful","Sci-Fi TV"], year: 2020, rating: "TV-MA", numberOfSeason: 2, defaultEpisodeInfo: exampleEpisodeInfo1, cast: "최기훈, 박민정",
                           creators: "최기훈",
                           episode: allExampleEpisodes,
-                          trailers: exampleTrailers)
+                          trailers: exampleTrailers,
+                          previewImageName: "whiteLinesPreview")
 
 let exampleMovie7 = Movie(id: UUID().uuidString, name: "Before Life", thumbnailURL:URL(string: "https://picsum.photos/200/306/")!, categories: ["Dystopian","Exciting","Suspenseful","Sci-Fi TV"], year: 2020, rating: "TV-MA", numberOfSeason: 2, defaultEpisodeInfo: exampleEpisodeInfo1, cast: "최기훈, 박민정",
                           creators: "최기훈",
                           episode: allExampleEpisodes,
-                          trailers: exampleTrailers)
+                          trailers: exampleTrailers,
+                          previewImageName: "arrestedDevPreview")
 
 var exampleMovies: [Movie]  { return [exampleMovie1, exampleMovie2, exampleMovie3, exampleMovie4, exampleMovie5, exampleMovie6,exampleTVShow1,exampleTVShow2,exampleTVShow3,exampleTVShow4,exampleTVShow5,exampleTVShow6].shuffled()
 }
@@ -94,7 +99,8 @@ let exampleTVShow1 = Movie(id: UUID().uuidString,
                            defaultEpisodeInfo: exampleEpisodeInfo1,
                            cast: "최기훈, 박민정",
                            creators: "최기훈",
-                           trailers: exampleTrailers)
+                           trailers: exampleTrailers,
+                           previewImageName: "arrestedDevPreview")
 let exampleTVShow2 = Movie(id: UUID().uuidString,
                            name: "Before Life",
                            thumbnailURL:URL(string: "https://picsum.photos/200/308/")!,
@@ -105,7 +111,8 @@ let exampleTVShow2 = Movie(id: UUID().uuidString,
                            defaultEpisodeInfo: exampleEpisodeInfo1,
                            cast: "최기훈, 박민정",
                            creators: "최기훈",
-                           trailers: exampleTrailers)
+                           trailers: exampleTrailers,
+                           previewImageName: "darkPreview")
 let exampleTVShow3 = Movie(id: UUID().uuidString,
                            name: "Before Life",
                            thumbnailURL:URL(string: "https://picsum.photos/200/309/")!,
@@ -116,7 +123,8 @@ let exampleTVShow3 = Movie(id: UUID().uuidString,
                            defaultEpisodeInfo: exampleEpisodeInfo1,
                            cast: "최기훈, 박민정",
                            creators: "최기훈",
-                           trailers: exampleTrailers)
+                           trailers: exampleTrailers,
+                           previewImageName: "dirtyJohnPreview")
 let exampleTVShow4 = Movie(id: UUID().uuidString,
                            name: "Before Life",
                            thumbnailURL:URL(string: "https://picsum.photos/200/310/")!,
@@ -127,7 +135,8 @@ let exampleTVShow4 = Movie(id: UUID().uuidString,
                            defaultEpisodeInfo: exampleEpisodeInfo1,
                            cast: "최기훈, 박민정",
                            creators: "최기훈",
-                           trailers: exampleTrailers)
+                           trailers: exampleTrailers,
+                           previewImageName: "ozarkPreview")
 let exampleTVShow5 = Movie(id: UUID().uuidString,
                            name: "Before Life",
                            thumbnailURL:URL(string: "https://picsum.photos/200/311/")!,
@@ -138,7 +147,8 @@ let exampleTVShow5 = Movie(id: UUID().uuidString,
                            defaultEpisodeInfo: exampleEpisodeInfo1,
                            cast: "최기훈, 박민정",
                            creators: "최기훈",
-                           trailers: exampleTrailers)
+                           trailers: exampleTrailers,
+                           previewImageName: "travelersPreview")
 let exampleTVShow6 = Movie(id: UUID().uuidString,
                            name: "Before Life",
                            thumbnailURL:URL(string: "https://picsum.photos/200/312/")!,
@@ -149,7 +159,8 @@ let exampleTVShow6 = Movie(id: UUID().uuidString,
                            defaultEpisodeInfo: exampleEpisodeInfo1,
                            cast: "최기훈, 박민정",
                            creators: "최기훈",
-                           trailers: exampleTrailers)
+                           trailers: exampleTrailers,
+                           previewImageName: "whiteLinesPreview")
 
 
 // 디테일뷰 더미 텍스트

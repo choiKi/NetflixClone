@@ -43,6 +43,9 @@
 		C4B6778C2897D80700105BAE /* VideoPreviewImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B6778B2897D80700105BAE /* VideoPreviewImage.swift */; };
 		C4B6778E2897DA1000105BAE /* TrailerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B6778D2897DA1000105BAE /* TrailerList.swift */; };
 		C4EDA40D289FAD2C00E2FF67 /* HomeStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EDA40C289FAD2C00E2FF67 /* HomeStack.swift */; };
+		C4FDB07B28A8E5D200E9FEE4 /* ComingSoonVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FDB07A28A8E5D200E9FEE4 /* ComingSoonVM.swift */; };
+		C4FDB07D28A8E7CD00E9FEE4 /* TrackableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FDB07C28A8E7CD00E9FEE4 /* TrackableScrollView.swift */; };
+		C4FDB08028A8FBC800E9FEE4 /* DownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FDB07F28A8FBC800E9FEE4 /* DownloadView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +104,9 @@
 		C4B6778B2897D80700105BAE /* VideoPreviewImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPreviewImage.swift; sourceTree = "<group>"; };
 		C4B6778D2897DA1000105BAE /* TrailerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerList.swift; sourceTree = "<group>"; };
 		C4EDA40C289FAD2C00E2FF67 /* HomeStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStack.swift; sourceTree = "<group>"; };
+		C4FDB07A28A8E5D200E9FEE4 /* ComingSoonVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonVM.swift; sourceTree = "<group>"; };
+		C4FDB07C28A8E7CD00E9FEE4 /* TrackableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackableScrollView.swift; sourceTree = "<group>"; };
+		C4FDB07F28A8FBC800E9FEE4 /* DownloadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +195,7 @@
 		C405F685288D461D008D696C /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				C4FDB08128A9072000E9FEE4 /* Download */,
 				C4B0641D28917577003C8D53 /* Helper */,
 				C4B0641C28917565003C8D53 /* HomeView */,
 				C4B064192891754D003C8D53 /* Model */,
@@ -218,6 +225,8 @@
 				C48B6AD828A546B000F6B67A /* ComingSoon.swift */,
 				C48B6ADB28A5492E00F6B67A /* Notification.swift */,
 				C48B6ADD28A54FF400F6B67A /* CommingSoonRow.swift */,
+				C4FDB07A28A8E5D200E9FEE4 /* ComingSoonVM.swift */,
+				C4FDB07C28A8E7CD00E9FEE4 /* TrackableScrollView.swift */,
 			);
 			path = ComingSoon;
 			sourceTree = "<group>";
@@ -276,6 +285,14 @@
 				C4B6778B2897D80700105BAE /* VideoPreviewImage.swift */,
 			);
 			path = VideoPlayer;
+			sourceTree = "<group>";
+		};
+		C4FDB08128A9072000E9FEE4 /* Download */ = {
+			isa = PBXGroup;
+			children = (
+				C4FDB07F28A8FBC800E9FEE4 /* DownloadView.swift */,
+			);
+			path = Download;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,7 +437,9 @@
 				C405F684288D4613008D696C /* HomeView.swift in Sources */,
 				C40D76C8288D52DF00691899 /* HomeVM.swift in Sources */,
 				C44429A228A5170500A5E30C /* GenerateMovies.swift in Sources */,
+				C4FDB08028A8FBC800E9FEE4 /* DownloadView.swift in Sources */,
 				C405F65C288D4466008D696C /* ContentView.swift in Sources */,
+				C4FDB07D28A8E7CD00E9FEE4 /* TrackableScrollView.swift in Sources */,
 				C48B6AD928A546B000F6B67A /* ComingSoon.swift in Sources */,
 				C44429A428A5234500A5E30C /* PopularMovieView.swift in Sources */,
 				C4B677872897D61600105BAE /* Trailer.swift in Sources */,
@@ -438,6 +457,7 @@
 				C4B1FDB128A23F6500FA4F5B /* ActivityIndicator.swift in Sources */,
 				C48B6ADC28A5492E00F6B67A /* Notification.swift in Sources */,
 				C4B1FDB528A2AE0700FA4F5B /* SearchVM.swift in Sources */,
+				C4FDB07B28A8E5D200E9FEE4 /* ComingSoonVM.swift in Sources */,
 				C48B6AD728A5362700F6B67A /* SearchResultsGrid.swift in Sources */,
 				C47A943C288E7C1900A6DC18 /* PlayButton.swift in Sources */,
 				C4EDA40D289FAD2C00E2FF67 /* HomeStack.swift in Sources */,

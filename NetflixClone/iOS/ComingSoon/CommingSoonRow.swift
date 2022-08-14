@@ -60,7 +60,7 @@ struct CommingSoonRow: View {
                 .font(.subheadline)
             }
             .font(.caption)
-            VStack {
+            VStack (alignment: .leading, spacing: 5) {
                 Text(movie.name)
                     .font(.title2)
                 Text(movie.episodeDescribtionDisplay)

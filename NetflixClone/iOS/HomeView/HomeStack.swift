@@ -17,8 +17,10 @@ struct HomeStack: View {
     var body: some View {
         // id: \.self -> forEach 루프는 각각 루프 사이마다 구별가능한 아이덴티티가 필요함
         // id를 부여함으로 각 each마다 값을줘서 사용가능
+        MoviePreviewRow(movies: exampleMovies)
         ForEach(vm.allCategories, id: \.self) { category in
             VStack {
+                
                 HStack {
                     Text(category)
                         .font(.title3)

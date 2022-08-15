@@ -50,39 +50,46 @@ let exampleMovie1 = Movie(id: UUID().uuidString,
                           cast: "최기훈, 박민정",
                           creators: "최기훈",
                           episode: allExampleEpisodes,
-                          trailers: exampleTrailers, previewImageName: "ozarkPreview"
+                          trailers: exampleTrailers, previewImageName: "ozarkPreview",
+                          previewVideoURL: exampleVideoURL
                           )
 let exampleMovie2 = Movie(id: UUID().uuidString, name: "Travelers", thumbnailURL:URL(string: "https://picsum.photos/200/301/")!, categories: ["Dystopian","Exciting","Suspenseful","Sci-Fi TV"], year: 2020, rating: "TV-MA", numberOfSeason: 2, defaultEpisodeInfo: exampleEpisodeInfo1,cast: "최기훈, 박민정",
                           creators: "최기훈",
                           episode: allExampleEpisodes,
-                          trailers: exampleTrailers, previewImageName: "arrestedDevPreview")
+                          trailers: exampleTrailers, previewImageName: "arrestedDevPreview",
+                          previewVideoURL: exampleVideoURL)
 let exampleMovie3 = Movie(id: UUID().uuidString, name: "Community", thumbnailURL:URL(string: "https://picsum.photos/200/302/")!, categories: ["Dystopian","Exciting","Suspenseful","Sci-Fi TV"], year: 2020, rating: "TV-MA", numberOfSeason: 1, defaultEpisodeInfo: exampleEpisodeInfo1,cast: "최기훈, 박민정",
                           creators: "최기훈",
                           episode: allExampleEpisodes,
                           trailers: exampleTrailers,
-                          previewImageName: "darkPreview")
+                          previewImageName: "darkPreview",
+                          previewVideoURL: exampleVideoURL)
 let exampleMovie4 = Movie(id: UUID().uuidString, name: "Alone", thumbnailURL:URL(string: "https://picsum.photos/200/303/")!, categories: ["Dystopian","Exciting","Suspenseful","Sci-Fi TV"], year: 2020, rating: "TV-MA", numberOfSeason: 4, defaultEpisodeInfo: exampleEpisodeInfo1,cast: "최기훈, 박민정",
                           creators: "최기훈",
                           episode: allExampleEpisodes,
                           trailers: exampleTrailers,
-                          previewImageName: "travelersPreview")
+                          previewImageName: "travelersPreview",
+                          previewVideoURL: exampleVideoURL)
 let exampleMovie5 = Movie(id: UUID().uuidString, name: "Hannibal", thumbnailURL:URL(string: "https://picsum.photos/200/304/")!, categories: ["Dystopian","Exciting","Suspenseful","Sci-Fi TV"], year: 2020, rating: "TV-MA", defaultEpisodeInfo: exampleEpisodeInfo1,cast: "최기훈, 박민정",
                           creators: "최기훈",
                           episode: allExampleEpisodes,
                           trailers: exampleTrailers,
-                          previewImageName: "dirtyJohnPreview")
+                          previewImageName: "dirtyJohnPreview",
+                          previewVideoURL: exampleVideoURL)
 
 let exampleMovie6 = Movie(id: UUID().uuidString, name: "After Life", thumbnailURL:URL(string: "https://picsum.photos/200/305/")!, categories: ["Dystopian","Exciting","Suspenseful","Sci-Fi TV"], year: 2020, rating: "TV-MA", numberOfSeason: 2, defaultEpisodeInfo: exampleEpisodeInfo1, cast: "최기훈, 박민정",
                           creators: "최기훈",
                           episode: allExampleEpisodes,
                           trailers: exampleTrailers,
-                          previewImageName: "whiteLinesPreview")
+                          previewImageName: "whiteLinesPreview",
+                          previewVideoURL: exampleVideoURL)
 
 let exampleMovie7 = Movie(id: UUID().uuidString, name: "Before Life", thumbnailURL:URL(string: "https://picsum.photos/200/306/")!, categories: ["Dystopian","Exciting","Suspenseful","Sci-Fi TV"], year: 2020, rating: "TV-MA", numberOfSeason: 2, defaultEpisodeInfo: exampleEpisodeInfo1, cast: "최기훈, 박민정",
                           creators: "최기훈",
                           episode: allExampleEpisodes,
                           trailers: exampleTrailers,
-                          previewImageName: "arrestedDevPreview")
+                          previewImageName: "arrestedDevPreview",
+                          previewVideoURL: exampleVideoURL)
 
 var exampleMovies: [Movie]  { return [exampleMovie1, exampleMovie2, exampleMovie3, exampleMovie4, exampleMovie5, exampleMovie6,exampleTVShow1,exampleTVShow2,exampleTVShow3,exampleTVShow4,exampleTVShow5,exampleTVShow6].shuffled()
 }

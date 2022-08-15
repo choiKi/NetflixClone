@@ -14,12 +14,12 @@ struct PagerView<Content: View>: View {
     @Binding var currentIndex: Int
     @Binding var translation: CGFloat
     let content: Content
-
     
     init (
         pageCount: Int,
         currentIndex: Binding<Int>,
         translation: Binding<CGFloat>,
+        // view들을 TupleView로 만들수있음
         @ViewBuilder content: () -> Content
     ) {
         self.pageCount = pageCount

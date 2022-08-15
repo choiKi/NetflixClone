@@ -12,7 +12,7 @@
 import Foundation
 import SwiftUI
 
-let exampleVideoURL = URL(string: "https://www.radiantmediaplayer.com/media/big-buck-bunny-360.mp4")!
+let exampleVideoURL = URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")!
 let exampleImageURL1 = URL(string: "https://picsum.photos/300/104")!
 let exampleImageURL2 = URL(string: "https://picsum.photos/300/105")!
 let exampleImageURL3 = URL(string: "https://picsum.photos/300/106")!
@@ -46,11 +46,13 @@ let exampleMovie1 = Movie(id: UUID().uuidString,
                           year: 2020,
                           rating: "TV-MA",
                           numberOfSeason: 2,
+                          accentColor: Color.blue,
                           defaultEpisodeInfo: exampleEpisodeInfo1,
                           cast: "최기훈, 박민정",
                           creators: "최기훈",
                           episode: allExampleEpisodes,
-                          trailers: exampleTrailers, previewImageName: "ozarkPreview",
+                          trailers: exampleTrailers,
+                          previewImageName: "ozarkPreview",
                           previewVideoURL: exampleVideoURL
                           )
 let exampleMovie2 = Movie(id: UUID().uuidString, name: "Travelers", thumbnailURL:URL(string: "https://picsum.photos/200/301/")!, categories: ["Dystopian","Exciting","Suspenseful","Sci-Fi TV"], year: 2020, rating: "TV-MA", numberOfSeason: 2, defaultEpisodeInfo: exampleEpisodeInfo1,cast: "최기훈, 박민정",

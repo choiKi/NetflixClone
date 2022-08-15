@@ -28,6 +28,10 @@
 		C473248028AA2B81008DDBC0 /* MoviePreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C473247F28AA2B81008DDBC0 /* MoviePreviewCell.swift */; };
 		C473248328AA32B4008DDBC0 /* MoviePreviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C473248228AA32B4008DDBC0 /* MoviePreviewRow.swift */; };
 		C473248728AA40A3008DDBC0 /* PagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C473248628AA40A3008DDBC0 /* PagerView.swift */; };
+		C47324C028AA6429008DDBC0 /* VideoPlayer in Frameworks */ = {isa = PBXBuildFile; productRef = C47324BF28AA6429008DDBC0 /* VideoPlayer */; };
+		C47324C228AA64E7008DDBC0 /* TrailerPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47324C128AA64E7008DDBC0 /* TrailerPlayerView.swift */; };
+		C47324C428AA66FD008DDBC0 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47324C328AA66FD008DDBC0 /* PreviewView.swift */; };
+		C47324C828AA69B0008DDBC0 /* PreviewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47324C728AA69B0008DDBC0 /* PreviewVM.swift */; };
 		C47A9435288E648600A6DC18 /* TopMoviePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47A9434288E648600A6DC18 /* TopMoviePreview.swift */; };
 		C47A9438288E737900A6DC18 /* SmallVerticalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47A9437288E737900A6DC18 /* SmallVerticalButton.swift */; };
 		C47A943C288E7C1900A6DC18 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47A943B288E7C1900A6DC18 /* PlayButton.swift */; };
@@ -92,6 +96,9 @@
 		C473247F28AA2B81008DDBC0 /* MoviePreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePreviewCell.swift; sourceTree = "<group>"; };
 		C473248228AA32B4008DDBC0 /* MoviePreviewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePreviewRow.swift; sourceTree = "<group>"; };
 		C473248628AA40A3008DDBC0 /* PagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerView.swift; sourceTree = "<group>"; };
+		C47324C128AA64E7008DDBC0 /* TrailerPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerPlayerView.swift; sourceTree = "<group>"; };
+		C47324C328AA66FD008DDBC0 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		C47324C728AA69B0008DDBC0 /* PreviewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewVM.swift; sourceTree = "<group>"; };
 		C47A9434288E648600A6DC18 /* TopMoviePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMoviePreview.swift; sourceTree = "<group>"; };
 		C47A9437288E737900A6DC18 /* SmallVerticalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallVerticalButton.swift; sourceTree = "<group>"; };
 		C47A943B288E7C1900A6DC18 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
@@ -121,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C40D76BF288D4DDC00691899 /* Kingfisher in Frameworks */,
+				C47324C028AA6429008DDBC0 /* VideoPlayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +240,9 @@
 				C473247F28AA2B81008DDBC0 /* MoviePreviewCell.swift */,
 				C473248228AA32B4008DDBC0 /* MoviePreviewRow.swift */,
 				C473248628AA40A3008DDBC0 /* PagerView.swift */,
+				C47324C128AA64E7008DDBC0 /* TrailerPlayerView.swift */,
+				C47324C328AA66FD008DDBC0 /* PreviewView.swift */,
+				C47324C728AA69B0008DDBC0 /* PreviewVM.swift */,
 			);
 			path = PreView;
 			sourceTree = "<group>";
@@ -330,6 +341,7 @@
 			name = NetflixClone;
 			packageProductDependencies = (
 				C40D76BE288D4DDC00691899 /* Kingfisher */,
+				C47324BF28AA6429008DDBC0 /* VideoPlayer */,
 			);
 			productName = NetflixClone;
 			productReference = C405F656288D4466008D696C /* NetflixClone.app */;
@@ -405,6 +417,7 @@
 			mainGroup = C405F64D288D4466008D696C;
 			packageReferences = (
 				C40D76BD288D4DDC00691899 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				C47324BE28AA6429008DDBC0 /* XCRemoteSwiftPackageReference "VideoPlayer" */,
 			);
 			productRefGroup = C405F657288D4466008D696C /* Products */;
 			projectDirPath = "";
@@ -455,11 +468,14 @@
 				C405F684288D4613008D696C /* HomeView.swift in Sources */,
 				C40D76C8288D52DF00691899 /* HomeVM.swift in Sources */,
 				C44429A228A5170500A5E30C /* GenerateMovies.swift in Sources */,
+				C47324C428AA66FD008DDBC0 /* PreviewView.swift in Sources */,
+				C47324C828AA69B0008DDBC0 /* PreviewVM.swift in Sources */,
 				C4FDB08028A8FBC800E9FEE4 /* DownloadView.swift in Sources */,
 				C405F65C288D4466008D696C /* ContentView.swift in Sources */,
 				C4FDB07D28A8E7CD00E9FEE4 /* TrackableScrollView.swift in Sources */,
 				C48B6AD928A546B000F6B67A /* ComingSoon.swift in Sources */,
 				C44429A428A5234500A5E30C /* PopularMovieView.swift in Sources */,
+				C47324C228AA64E7008DDBC0 /* TrailerPlayerView.swift in Sources */,
 				C4B677872897D61600105BAE /* Trailer.swift in Sources */,
 				C48B6ADE28A54FF400F6B67A /* CommingSoonRow.swift in Sources */,
 				C40D76C4288D500300691899 /* StandardHomeMovie.swift in Sources */,
@@ -818,6 +834,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		C47324BE28AA6429008DDBC0 /* XCRemoteSwiftPackageReference "VideoPlayer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/wxxsw/VideoPlayer";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -825,6 +849,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C40D76BD288D4DDC00691899 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		C47324BF28AA6429008DDBC0 /* VideoPlayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C47324BE28AA6429008DDBC0 /* XCRemoteSwiftPackageReference "VideoPlayer" */;
+			productName = VideoPlayer;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

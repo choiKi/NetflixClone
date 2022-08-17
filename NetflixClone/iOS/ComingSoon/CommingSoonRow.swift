@@ -81,6 +81,5 @@ struct CommingSoonRow_Previews: PreviewProvider {
                 .edgesIgnoringSafeArea(.all)
             CommingSoonRow(movie: exampleMovie1, movieDetailToShow: .constant(nil))
         }
-        
     }
 }

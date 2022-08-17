@@ -11,8 +11,13 @@
 
 import Foundation
 import SwiftUI
+import GSPlayer
+import AVKit
+import VideoPlayer
 
-let exampleVideoURL = URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")!
+let exampleVideoURL = URL(string: "https://thumbs.gfycat.com/FoolhardyMiserlyAsiantrumpetfish-mobile.mp4")!
+let exampleVideoURL2 = URL(string: "https://media.w3.org/2010/05/sintel/trailer.mp4")!
+
 let exampleImageURL1 = URL(string: "https://picsum.photos/300/104")!
 let exampleImageURL2 = URL(string: "https://picsum.photos/300/105")!
 let exampleImageURL3 = URL(string: "https://picsum.photos/300/106")!
@@ -20,12 +25,6 @@ let exampleImageURL3 = URL(string: "https://picsum.photos/300/106")!
 var randomImageURL: URL {
     return [exampleImageURL1,exampleImageURL2,exampleImageURL3].randomElement() ?? exampleImageURL1
 }
-//  트레일러
-let exampleTrailer1 = Trailer(name: "시즌 3 트레일러", videoURL: exampleVideoURL, thumanailImageURL: exampleImageURL1)
-let exampleTrailer2 = Trailer(name: "메인 예고편", videoURL: exampleVideoURL, thumanailImageURL: exampleImageURL2)
-let exampleTrailer3 = Trailer(name: "감독 인터뷰", videoURL: exampleVideoURL, thumanailImageURL: exampleImageURL3)
-
-let exampleTrailers = [exampleTrailer1, exampleTrailer2, exampleTrailer3]
 
 // 에피소드
 let episode1 = Episode(name: "끝과 시작", season: 1, episodeNumber: 1, thumbnailImageURLString: "https://picsum.photos/300/12", description: "6달 뒤 사망 판정받은 시한부 소년, 세상을 둘러보는 가치가 변하게 되고 자신이 진정으로 원하는것을 하기 시작하려하는데 잠깐 내가 원하는게 뭐지? 알길이 없다!", length: 52, videoURL: exampleVideoURL)
@@ -36,9 +35,14 @@ let episode5 = Episode(name: "뜻밖의 손님", season: 2, episodeNumber: 2, th
 let episode6 = Episode(name: "D-150", season: 2, episodeNumber: 3, thumbnailImageURLString: "https://picsum.photos/300/17", description: "계속 조여오는 숫자에 미칠것같은 조디, 약을 투여해보지만 나아질 기세는 없고, 이 사실을 모르는 주변사람들 조디를 압박하기 시작하고 이들은 점점 엇갈리기 시작하는데", length: 51, videoURL: exampleVideoURL)
 var allExampleEpisodes = [episode1,episode2,episode3,episode4,episode5,episode6]
 
+//  트레일러
+let exampleTrailer1 = Trailer(name: "시즌 3 트레일러", videoURL: exampleVideoURL, thumanailImageURL: exampleImageURL1)
+let exampleTrailer2 = Trailer(name: "메인 예고편", videoURL: exampleVideoURL2, thumanailImageURL: exampleImageURL2)
+let exampleTrailer3 = Trailer(name: "감독 인터뷰", videoURL: exampleVideoURL, thumanailImageURL: exampleImageURL3)
 
-// 홈 뷰 영화 예시
+let exampleTrailers = [exampleTrailer1, exampleTrailer2, exampleTrailer3]
 
+// 뷰 영화 예시
 let exampleMovie1 = Movie(id: UUID().uuidString,
                           name: "Dark",
                           thumbnailURL:URL(string: "https://picsum.photos/200/300/")!,
@@ -174,6 +178,7 @@ let exampleTVShow6 = Movie(id: UUID().uuidString,
 
 // 디테일뷰 더미 텍스트
 
+
 let exampleEpisodeInfo1 = CurrentEpisodeInfo(episodeName: "더미텍스트 시작", description: "인쇄 및 조판 업계의 더미 텍스트일 뿐입니다. 로렘 입섬은 알려지지 않은 프린터가 활자의 갤러리를 가져다가 스크램블을 한 1500년대부터 업계의 표준 더미 텍스트였다", season: 3, episode: 1)
 
 
@@ -199,4 +204,17 @@ extension View {
     func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
+    
+    @ViewBuilder func isHidden(_ hidden: Bool, remove: Bool = false) -> some View {
+        if hidden {
+            if !remove {
+                self.hidden()
+                
+            }
+        }else {
+            self
+        }
+    }
 }
+
+

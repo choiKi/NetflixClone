@@ -6,13 +6,16 @@
 //
 
 
-// this file insert to HomeStack
+// this file insert to HomeView
 
 import SwiftUI
 
 struct MoviePreviewRow: View {
     
     var movies: [Movie]
+    
+    @Binding var showPreviewFullScreen: Bool
+    @Binding var previewStartingIndex: Int
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -29,6 +32,10 @@ struct MoviePreviewRow: View {
                             .frame(width: 120, height: 120)
                             .padding(.trailing, 14)
                             .padding(.leading, 10)
+                            .onTapGesture {
+                                previewStartingIndex = index
+                                showPreviewFullScreen = true
+                            }
                     }
                 }
             }
@@ -41,7 +48,7 @@ struct MoviePreviewRow_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
-            MoviePreviewRow(movies: exampleMovies)
+            MoviePreviewRow(movies: exampleMovies, showPreviewFullScreen: .constant(false), previewStartingIndex: .constant(0))
         }
         
     }

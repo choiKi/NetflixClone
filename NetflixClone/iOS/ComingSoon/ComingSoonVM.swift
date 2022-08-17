@@ -13,7 +13,7 @@ class ComingSoonVM: ObservableObject {
     @Published var movies: [Movie] = []
     
     init() {
-        self.movies = generateMovies(20)
+        self.movies = generateMovies(10)
     }
     
 }

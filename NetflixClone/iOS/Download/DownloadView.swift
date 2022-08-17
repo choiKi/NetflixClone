@@ -33,6 +33,7 @@ struct DownloadView: View {
                             } label: {
                                 Text("\(smartDownloadOnOff)")
                                     .bold()
+                                    .foregroundColor(.blue)
                             }
                             
                     Spacer()

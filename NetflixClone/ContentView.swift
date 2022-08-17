@@ -6,49 +6,67 @@
 //
 
 import SwiftUI
-
+import Foundation
 
 struct ContentView: View {
+    
+    let screen = UIScreen.main.bounds
+    
+    @State private var showPreviewFullscreen = false
+    @State private var previewStartingIndex: Int = 0
+    @State private var previewCurrentPos: CGFloat = 1400
     
     init() {
         UITabBar.appearance().isTranslucent = false
         UITabBar.appearance().barTintColor = UIColor.black
+        
     }
-    
+   
     var body: some View {
-        TabView {
-            HomeView()
-                .tabItem {
-                    Image(systemName: "house")
-                    Text("홈")
-                }.tag(0)
+        ZStack {
+            TabView {
+                HomeView(showPreviewFullScreen: $showPreviewFullscreen, previewStartingIndex: $previewStartingIndex)
+                    .tabItem {
+                        Label("홈", systemImage: "house")
+                    }.tag(0)
+                
+                SearchView()
+                    .tabItem {
+                        Label("검색", systemImage: "magnifyingglass")
+                    }.tag(1)
+                
+                DownloadView()
+                    .tabItem {
+                        Label("다운로드", systemImage: "square.and.arrow.down.fill")
+                    }.tag(2)
+                
+                ComingSoonView()
+                    .tabItem {
+                        Label("개봉예정", systemImage: "play.fill")
+                    }
+                 
+            }
+            .accentColor(.white)
             
-            SearchView()
-                .tabItem {
-                    Image(systemName: "magnifyingglass")
-                    Text("검색")
-                }.tag(1)
-            
-            
-            DownloadView()
-                .tabItem {
-                    Image(systemName: "square.and.arrow.down.fill")
-                    Text("다운로드")
-                }.tag(3)
-            
-            ComingSoon()
-                .tabItem {
-                    Image(systemName: "play.rectangle")
-                    Text("개봉 예정")
-                }.tag(2)
-            
-            Text("더 보기")
-                .tabItem {
-                    Image(systemName: "equal")
-                    Text("2")
-                }.tag(4)
+            PreviewList(movies: exampleMovies,
+                        currentSelection: $previewStartingIndex,
+                        isVisible: $showPreviewFullscreen)
+                            .offset(y: previewCurrentPos)
+                            .isHidden(!showPreviewFullscreen)
+                            .animation(.easeIn)
+                            .transition(.move(edge: .bottom))
         }
-        .accentColor(.white)
+        .onChange(of: showPreviewFullscreen) { value in
+            if value {
+                withAnimation {
+                    previewCurrentPos = .zero
+                }
+            } else {
+                    withAnimation {
+                        self.previewCurrentPos = screen.height + 20
+                }
+            }
+        }
     }
 }
 

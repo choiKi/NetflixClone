@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
-import GSPlayer
-import VideoPlayer
 import Kingfisher
+import AVFoundation
+import VideoPlayer
+import AVKit
 
 struct TrailerPlayerView: View {
     
@@ -18,7 +19,9 @@ struct TrailerPlayerView: View {
     
     var body: some View {
         if videoURL != nil {
-            VideoPlayer(url: videoURL!, play: $playVideo)
+            //VideoPlayer(player: AVPlayer(url: URL(string: "\(videoURL)")!))
+             VideoPlayer(url: videoURL!, play: $playVideo)
+                
         } else {
             Text("실행할 비디오가 없습니다.")
         }
@@ -27,6 +30,6 @@ struct TrailerPlayerView: View {
 
 struct TrailerPlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        TrailerPlayerView(videoURL: nil, playVideo: .constant(true))
+        TrailerPlayerView(videoURL: exampleVideoURL, playVideo: .constant(true))
     }
 }

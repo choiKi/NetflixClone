@@ -21,6 +21,9 @@ struct HomeView: View {
     @State private var showGenreSelection = false
     @State private var showTopRowSelection = false
     
+    @Binding var showPreviewFullScreen: Bool
+    @Binding var previewStartingIndex: Int
+    
     var body: some View {
         ZStack {
             // 배경을 검정으로
@@ -33,12 +36,18 @@ struct HomeView: View {
                         
                     TopRowButton(topRowSelection: $topRowSelection, selectedGenre: $selectedGenre, showGenreSelection: $showGenreSelection, showTopRowSelection: $showTopRowSelection)
                         
-                        TopMoviePreview(movie: exampleMovie1)
+                    TopMoviePreview(movie: exampleMovie1)
                             .frame(width: screen.width)
                             .padding(.top, -100)
                             .zIndex(-1.0)
                     
-                    HomeStack(vm: vm,topRowSelection: topRowSelection ,movieDetailToShow: $movieDetailToShow)
+                    MoviePreviewRow(movies: exampleMovies,
+                                    showPreviewFullScreen: $showPreviewFullScreen,
+                                    previewStartingIndex: $previewStartingIndex)
+                    
+                    HomeStack(vm: vm,
+                              topRowSelection: topRowSelection ,
+                              movieDetailToShow: $movieDetailToShow)
                 }
             }
             
@@ -125,7 +134,7 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-       HomeView()
+        HomeView(showPreviewFullScreen: .constant(false), previewStartingIndex: .constant(0))
     }
 }
 
@@ -208,10 +217,12 @@ struct TopRowButton: View {
                         
                     })
                     Spacer()
+                    
                 }
             }
             .padding(.leading, 10)
             .padding(.trailing, 30)
+        
         default :
             Text("error")
         }

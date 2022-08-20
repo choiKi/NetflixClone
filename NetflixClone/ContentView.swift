@@ -14,7 +14,11 @@ struct ContentView: View {
     
     @State private var showPreviewFullscreen = false
     @State private var previewStartingIndex: Int = 0
+    
     @State private var previewCurrentPos: CGFloat = 1400
+    @State private var previewNewPos: CGFloat = 1000
+    
+    @State private var previewHorizontalDragActive: Bool = false
     
     init() {
         UITabBar.appearance().isTranslucent = false
@@ -23,6 +27,48 @@ struct ContentView: View {
     }
    
     var body: some View {
+        
+        let previewDragGesture = DragGesture()
+            .onChanged { value in
+                if previewHorizontalDragActive {
+                    return
+                }
+                if abs(value.translation.width) > abs(value.translation.height) {
+                    if value.translation.height < 30 {
+                        previewHorizontalDragActive = true
+                        return
+                    }
+                }
+            }
+            .onEnded { value in
+                if previewHorizontalDragActive {
+                    previewHorizontalDragActive = false
+                    return
+                }
+                let shouldBePosition = value.translation.height + self.previewNewPos
+                
+                if shouldBePosition < 0 {
+                    self.previewCurrentPos = .zero
+                    self.previewNewPos = .zero
+                } else {
+                    let closingPoint = screen.size.height * 0.5
+                    if shouldBePosition > closingPoint {
+                        withAnimation {
+                            self.showPreviewFullscreen = false
+                            self.previewCurrentPos = screen.height + 20
+                            self.previewNewPos = screen.height + 20
+                        }
+                    }else {
+                        withAnimation {
+                            self.previewNewPos = .zero
+                            self.previewCurrentPos = .zero
+                        }
+                    }
+                }
+                previewHorizontalDragActive = false
+            }
+        
+        
         ZStack {
             TabView {
                 HomeView(showPreviewFullScreen: $showPreviewFullscreen, previewStartingIndex: $previewStartingIndex)
@@ -50,7 +96,8 @@ struct ContentView: View {
             
             PreviewList(movies: exampleMovies,
                         currentSelection: $previewStartingIndex,
-                        isVisible: $showPreviewFullscreen)
+                        isVisible: $showPreviewFullscreen,
+            externalDragGesture: previewDragGesture)
                             .offset(y: previewCurrentPos)
                             .isHidden(!showPreviewFullscreen)
                             .animation(.easeIn)
@@ -60,10 +107,12 @@ struct ContentView: View {
             if value {
                 withAnimation {
                     previewCurrentPos = .zero
+                    previewNewPos = .zero
                 }
             } else {
                     withAnimation {
                         self.previewCurrentPos = screen.height + 20
+                        self.previewNewPos = screen.height + 20
                 }
             }
         }

@@ -19,6 +19,8 @@ struct PreviewList: View {
     @Binding var currentSelection: Int
     @Binding var isVisible: Bool
     
+    let externalDragGesture: _EndedGesture<_ChangedGesture<DragGesture>>
+    
     let screen = UIScreen.main.bounds
     
     // 각 인덱스에서 영상이 재생되고 멈추게하는 매서드
@@ -38,7 +40,7 @@ struct PreviewList: View {
             
             PagerView(pageCount: movies.count,
                       currentIndex: $currentSelection,
-                      translation: $currentTranslation) {
+                      translation: $currentTranslation, externalDragGesture: externalDragGesture) {
                 ForEach (0..<movies.count) { movieIndex in
                     let movie = movies[movieIndex]
                     PreviewView(vm: PreviewVM(movie: movie), playVideo: shouldPlayVideo(index: movieIndex))
@@ -49,7 +51,7 @@ struct PreviewList: View {
         }
     }
 }
-
+/*
 struct ExamplePreviewList: View {
     
     @State private var currentSelection = 0
@@ -58,7 +60,8 @@ struct ExamplePreviewList: View {
     var body: some View {
         PreviewList(movies: exampleMovies,
                     currentSelection: $currentSelection,
-                    isVisible: $isVisible)
+                    isVisible: $isVisible,
+                    externalDragGesture: externalDragGesture)
     }
 }
 
@@ -67,3 +70,5 @@ struct PreviewList_Previews: PreviewProvider {
         ExamplePreviewList()
     }
 }
+
+*/

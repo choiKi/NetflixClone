@@ -15,7 +15,7 @@ import GSPlayer
 import AVKit
 import VideoPlayer
 
-let exampleVideoURL = URL(string: "https://thumbs.gfycat.com/FoolhardyMiserlyAsiantrumpetfish-mobile.mp4")!
+let exampleVideoURL = URL(string: "https://cdn.flowplayer.com/a30bd6bc-f98b-47bc-abf5-97633d4faea0/hls/de3f6ca7-2db3-4689-8160-0f574a5996ad/playlist.m3u8")!
 let exampleVideoURL2 = URL(string: "https://media.w3.org/2010/05/sintel/trailer.mp4")!
 
 let exampleImageURL1 = URL(string: "https://picsum.photos/300/104")!
